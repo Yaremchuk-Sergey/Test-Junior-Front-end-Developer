@@ -28,17 +28,22 @@ contactForm.addEventListener("submit", function (e) {
     message: messageInput.value,
   });
 
-  fetch(`https://httpbin.org/get?${params.toString()}`, { method: "GET" })
-    .then((response) => response.json())
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: nameInput.value,
+      email: emailInput.value,
+      message: messageInput.value,
+    }),
+  })
+    .then((res) => res.json())
     .then((data) => {
       alert("Повідомлення відправлено!");
       console.log(data);
-
       nameInput.value = "";
       emailInput.value = "";
       messageInput.value = "";
     })
-    .catch(() => {
-      alert("Сталася помилка при відправці. Спробуйте пізніше.");
-    });
+    .catch(() => alert("Сталася помилка при відправці. Спробуйте пізніше."));
 });
