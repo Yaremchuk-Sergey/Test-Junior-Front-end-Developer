@@ -489,8 +489,7 @@ table.concerts tr:last-child td {
   }
 
   .fon,
-  .fon-textarea,
-  .backdrop-btn {
+  .fon-textarea {
     width: 100%;
     max-width: 400px;
   }
@@ -849,4 +848,34 @@ a {
 
 .model-checkbox {
   margin-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    min-height: 400px;
+    width: 400px;
+    border-radius: 4px;
+    padding: 72px 16px 24px 16px;
+  }
+
+  .backdrop-btn {
+    padding: 16px 32px;
+    min-width: 149px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    min-height: 400px;
+    width: 300px;
+    border-radius: 4px;
+    padding: 72px 16px 24px 16px;
+  }
+
+  .backdrop-btn {
+    font-size: 14px;
+    padding: 12px 28px;
+    min-width: 129px;
+    height: 40px;
+  }
 }
